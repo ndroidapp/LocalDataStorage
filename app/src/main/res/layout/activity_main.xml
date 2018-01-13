@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.localdatastorage.MainActivity">
 
-    <ListView
-        android:id="@+id/list"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvItems"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"/>
 </android.support.constraint.ConstraintLayout>

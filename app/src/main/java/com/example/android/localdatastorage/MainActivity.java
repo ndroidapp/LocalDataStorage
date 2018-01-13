@@ -2,7 +2,7 @@ package com.example.android.localdatastorage;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.android.localdatastorage.model.DataItem;
 import com.example.android.localdatastorage.sample.SampleDataProvider;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 this, android.R.layout.simple_list_item_1,itemNames
         );*/
         DataItemAdapter adapter=new DataItemAdapter(this,dataItemList);
-        ListView listView=findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        RecyclerView recyclerView=findViewById(R.id.rvItems);
+        recyclerView.setAdapter(adapter);
     }
 }
