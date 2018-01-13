@@ -15,6 +15,7 @@ public class DataItem implements Parcelable {
     private String image;
 
     public DataItem() {
+
     }
 
     public DataItem(String itemId, String itemName, String category, String description, int sortPosition, double price, String image) {
