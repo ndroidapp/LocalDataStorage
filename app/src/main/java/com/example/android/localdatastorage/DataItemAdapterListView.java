@@ -17,9 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-/**
- * Created by Noor on 1/11/2018.
- */
 
 public class DataItemAdapterListView extends ArrayAdapter<DataItem> {
     List<DataItem> mDataItems;
