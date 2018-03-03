@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/prefs_display_in_grid"
+        android:title="@string/display_in_grid"
+        android:summary="@string/display_menu_data_in_multi_column_grid"/>
+</PreferenceScreen>

@@ -14,4 +14,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="display_in_grid">Display in grid</string>
+    <string name="prefs_display_in_grid">prefs_display_in_grid</string>
+    <string name="display_menu_data_in_multi_column_grid">Display menu data in multi_column grid</string>
 </resources>
