@@ -35,6 +35,7 @@ public class DataItemAdapter extends RecyclerView.Adapter<DataItemAdapter.ViewHo
 
     @Override
     public DataItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         SharedPreferences settings= PreferenceManager.getDefaultSharedPreferences(mContext);
         prefsListener=new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
