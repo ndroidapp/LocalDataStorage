@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 return o1.getItemName().compareTo(o2.getItemName());
             }
         });
-
         /*for (DataItem item: dataItemList) {
             itemNames.add(item.getItemName());
         }
