@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
+import com.example.android.localdatastorage.R;
 import com.example.android.localdatastorage.model.DataItem;
 import com.google.gson.Gson;
 
@@ -13,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class JSONHelper {
@@ -66,6 +69,33 @@ public class JSONHelper {
             }
         }
         return null;
+    }
+
+    public static List<DataItem> importFromResource(Context context) {
+        InputStreamReader reader=null;
+        InputStream inputStream=null;
+        try {
+            inputStream=context.getResources().openRawResource(R.raw.menuitems);
+            reader=new InputStreamReader(inputStream);
+            Gson gson=new Gson();
+            DataItems dataItems=gson.fromJson(reader, DataItems.class);
+            return dataItems.getDataItems();
+        } finally {
+            if (reader!=null){
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (inputStream!=null){
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     static class DataItems {

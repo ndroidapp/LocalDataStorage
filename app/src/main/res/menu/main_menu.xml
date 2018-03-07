@@ -10,7 +10,6 @@
     <item
         android:id="@+id/action_settings"
         android:title="Settings"
-        app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/action_export"
@@ -19,6 +18,10 @@
     <item
         android:id="@+id/action_import"
         android:title="Import"
+        />
+    <item
+        android:id="@+id/action_import_from_resource"
+        android:title="Import From Resource"
         />
 
 </menu>

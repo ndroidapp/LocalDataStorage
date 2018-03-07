@@ -30,7 +30,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final int SIGNIN_REQUEST = 0;
     public static final String MY_GLOBAL_PREFS = "my_global_prefs";
-    private static final String TAG = "Import";
+    private static final String TAG = "MainActivity";
     List<DataItem> dataItemList = SampleDataProvider.dataItemList;
     List<String> itemNames = new ArrayList<>();
 
@@ -94,20 +94,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentSettings);
                 return true;
             case R.id.action_export:
-                boolean result= JSONHelper.exportToJSON(this, dataItemList);
-                if (result){
+                boolean result = JSONHelper.exportToJSON(this, dataItemList);
+                if (result) {
                     Toast.makeText(MainActivity.this, "Data Exported", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     Toast.makeText(MainActivity.this, "Export Failed", Toast.LENGTH_SHORT).show();
 
                 }
                 return true;
             case R.id.action_import:
-                List<DataItem> dataItems=JSONHelper.importFromJSON(this);
-                if (dataItems!=null){
+                List<DataItem> dataItems = JSONHelper.importFromJSON(this);
+                if (dataItems != null) {
                     for (DataItem dataItem : dataItems) {
-                        Log.i(TAG, "onOptionsItemSelected: "+dataItem.getItemName());
+                        Log.i(TAG, "onOptionsItemSelected: " + dataItem.getItemName());
+                    }
+                }
+                return true;
+            case R.id.action_import_from_resource:
+                List<DataItem> dataItems1 = JSONHelper.importFromJSON(this);
+                if (dataItems1 != null) {
+                    for (DataItem dataItem : dataItems1) {
+                        Log.i(TAG, "onOptionsItemSelected: " + dataItem.getItemName());
                     }
                 }
                 return true;
